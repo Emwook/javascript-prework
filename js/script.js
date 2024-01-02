@@ -1,5 +1,4 @@
 
-var buttonRock, buttonPaper, buttonScissors;
 var playerScore = 0, computerScore = 0;
 
 
@@ -22,15 +21,14 @@ function buttonClicked(argButtonName) {
         }
     }
     
-    var computerMove, randomNumber;
-    randomNumber = Math.floor(Math.random() * 3 + 1);
+    const randomNumber = Math.floor(Math.random() * 3 + 1),
+        computerMove = getMoveName(randomNumber);
+
     console.log('wylosowana liczba to: ' + randomNumber);
-    computerMove = getMoveName(randomNumber);
     printMessage('Mój ruch: ' + computerMove);
     
-    
-    var playerMove, playerInput;
-    playerMove = argButtonName;
+    let playerMove = argButtonName, playerInput;
+
     console.log('Wpisana odpowiedź to: ' + playerInput);
     printMessage('Twój ruch: ' + playerMove);
     
@@ -63,7 +61,7 @@ function buttonClicked(argButtonName) {
         else if(playerMove == computerMove){
             printMessage('Remis!')
         }
-        else{
+        else {
             printMessage('Tak to sobie nie pogramy!')
         }
       }
@@ -72,11 +70,10 @@ function buttonClicked(argButtonName) {
     printMessage(playerScore + ' - ' + computerScore)
 }
 
-buttonRock = document.getElementById('button-rock');
+const buttonRock = document.getElementById('button-rock'),
+    buttonPaper = document.getElementById('button-paper'),
+    buttonScissors = document.getElementById('button-scissors');
+
 buttonRock.addEventListener('click', function(){ buttonClicked('kamień'); });
-
-buttonPaper = document.getElementById('button-paper');
 buttonPaper.addEventListener('click', function(){ buttonClicked('papier'); });
-
-buttonScissors = document.getElementById('button-scissors');
 buttonScissors.addEventListener('click', function(){ buttonClicked('nożyce'); });
