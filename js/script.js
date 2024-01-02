@@ -37,7 +37,7 @@ function buttonClicked(argButtonName) {
     function displayResult(playerMove, computerMove) {
         console.log('wywołano funkcję displayResults z argumentami: ' + playerMove + ', ' + computerMove );
         if (playerMove == 'papier' && computerMove == 'kamień') {
-          printMessage('Wygrywasz!');
+          printMessage('Wygrywasz!');   
           playerScore = playerScore + 1;
         }
         else if(playerMove == 'kamień' && computerMove == 'papier') {
