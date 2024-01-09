@@ -1,5 +1,5 @@
 
-var playerScore = 0, computerScore = 0;
+let playerScore = 0, computerScore = 0;
 
 
 function buttonClicked(argButtonName) {
